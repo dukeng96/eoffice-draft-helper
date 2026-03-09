@@ -24,18 +24,21 @@ eoffice-draft-helper/
 # 1. Cấu hình
 cd backend && cp .env.example .env   # Sửa VNPT_API_KEY
 
-# 2. Chạy
+# 2. Deploy (Docker)
 docker compose up -d
 
-# 3. Truy cập
+# 3. Phát triển frontend local
+cd frontend && npm install && npm run dev
+
+# 4. Truy cập
 # Frontend: http://localhost:3000
 # Backend:  http://localhost:8000/health
 ```
 
 ## Tài liệu
 
-- [Hướng dẫn triển khai](docs/deployment-guide.md) - Docker deploy, cấu hình, quản lý
-- [Hướng dẫn tích hợp](docs/integration-guide.md) - Nhúng vào web app khác (iframe / library)
+- [Hướng dẫn triển khai](docs/deployment-guide.md) - Docker deploy, phát triển local
+- [Hướng dẫn tích hợp](docs/integration-guide.md) - Nhúng vào web app khác (iframe)
 - [API Reference](docs/api-reference.md) - Chi tiết các endpoint backend
 
 ## License
