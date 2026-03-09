@@ -6,37 +6,36 @@ Trợ lý soạn thảo văn bản AI cho hệ thống eOffice. Giao diện side
 
 ```
 eoffice-draft-helper/
-├── backend/          # FastAPI + SSE streaming + Redis session
-├── frontend/         # React + TypeScript + Tailwind CSS
-└── docs/             # Tài liệu hướng dẫn
+├── backend/              # FastAPI + SSE streaming + Redis session
+├── frontend/             # React + TypeScript + Tailwind CSS
+├── docs/                 # Tài liệu hướng dẫn
+├── docker-compose.yml    # Deploy tất cả services
+└── .gitignore
 ```
 
-## Yêu cầu hệ thống
+## Yêu cầu
 
-- **Backend**: Python 3.11+, Redis 7+
-- **Frontend**: Node.js 20+
-- **LLM**: VNPT LLM API key (OpenAI-compatible endpoint)
+- Docker 24+ và Docker Compose v2+
+- VNPT LLM API key
 
 ## Khởi chạy nhanh
 
 ```bash
-# 1. Backend
-cd backend
-cp .env.example .env        # Sửa VNPT_API_KEY
-pip install -r requirements.txt
-uvicorn main:app --host 0.0.0.0 --port 8000
+# 1. Cấu hình
+cd backend && cp .env.example .env   # Sửa VNPT_API_KEY
 
-# 2. Frontend
-cd frontend
-npm install
-npm run dev                  # http://localhost:3000
+# 2. Chạy
+docker compose up -d
+
+# 3. Truy cập
+# Frontend: http://localhost:3000
+# Backend:  http://localhost:8000/health
 ```
 
 ## Tài liệu
 
-- [Hướng dẫn triển khai](docs/huong-dan-trien-khai.md) - Cài đặt, cấu hình, deploy production
-- [Hướng dẫn vận hành](docs/huong-dan-van-hanh.md) - Giám sát, xử lý sự cố, bảo trì
-- [Hướng dẫn nhúng](docs/huong-dan-nhung.md) - Tích hợp vào web app khác (iframe / library)
+- [Hướng dẫn triển khai](docs/deployment-guide.md) - Docker deploy, cấu hình, quản lý
+- [Hướng dẫn tích hợp](docs/integration-guide.md) - Nhúng vào web app khác (iframe / library)
 - [API Reference](docs/api-reference.md) - Chi tiết các endpoint backend
 
 ## License

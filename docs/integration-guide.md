@@ -1,4 +1,4 @@
-# Hướng dẫn Nhúng vào Web App khác
+# Hướng dẫn Tích hợp
 
 ## Mục lục
 
@@ -22,7 +22,7 @@ Cách đơn giản nhất, không lo xung đột CSS/JS với host app.
 
 ### Bước 1: Deploy Draft Helper
 
-Deploy backend + frontend theo [hướng dẫn triển khai](huong-dan-trien-khai.md). Giả sử domain là `https://ai-draft.eoffice.vn`.
+Deploy backend + frontend theo [hướng dẫn triển khai](deployment-guide.md). Giả sử domain là `https://ai-draft.eoffice.vn`.
 
 ### Bước 2: Thêm code nhúng vào host app
 
