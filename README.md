@@ -27,10 +27,7 @@ cd backend && cp .env.example .env   # Sửa VNPT_API_KEY
 # 2. Deploy (Docker)
 docker compose up -d
 
-# 3. Phát triển frontend local
-cd frontend && npm install && npm run dev
-
-# 4. Truy cập
+# 3. Truy cập
 # Frontend: http://localhost:3000
 # Backend:  http://localhost:8000/health
 ```
